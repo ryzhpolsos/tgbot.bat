@@ -29,7 +29,7 @@ goto :eof
 ```batch
 rem put your bot logic inside of this subroutine
 :process_message [chat_id] [first_name] [text]
-    if %_DEBUG%==0 ( echo.process_message called with %~1 %~2 %~3 )
+    if %_DEBUG%==1 ( echo.process_message called with %~1 %~2 %~3 )
 
     if "%~3"=="/start" (
         call :api sendMessage "chat_id=%~1&text=Hello,+%~2!"
